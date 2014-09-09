@@ -45,4 +45,25 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+  $scope.playlistName = 'Foo';
+})
+
+.controller('BrowseCtrl', function($scope, $ionicModal, $stateParams) {
+  // Create the settings modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/settings.html', {
+    scope: $scope,
+    animation: 'slide-in-right'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeSettings = function() {
+    $scope.modal.hide();
+  };
+
+  // Open the login modal
+  $scope.openSettings = function() {
+    $scope.modal.show();
+  };
 });

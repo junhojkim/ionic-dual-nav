@@ -44,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       abstract: true,
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/browse.html",
+          controller: 'BrowseCtrl'
         }
       }
     })
